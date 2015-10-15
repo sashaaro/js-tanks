@@ -32,7 +32,7 @@ border.setWidth(grid.width);
 var myTank = ef.createTank();
 grid.addElement(myTank, 10, 10);
 gridControl.take(myTank);
-extend(myTank, GridElement.behavior.movable);
+helper.extend(myTank, GridElement.behavior.movable);
 //myTank.moveSpeed = 3;
 
 var enemyTank = ef.createTank();
@@ -45,7 +45,7 @@ gridControl.computer(enemyTank);
 setInterval(function() {
     for(var prop in grid.elements) {
         var element = grid.elements[prop];
-        if((hasBehaviour(element, GridElement.behavior.movable))) {
+        if((helper.hasBehaviour(element, GridElement.behavior.movable))) {
             element.move();
         }
     }
