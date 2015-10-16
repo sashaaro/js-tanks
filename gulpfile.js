@@ -16,8 +16,9 @@ gulp.task('scripts', function() {
             "grid.js",
             "gridElement.js",
             "gridElementControl.js",
-            "elementFactory.js",
             "tank.js",
+            "well.js",
+            "elementFactory.js",
             "render.js",
             "game.js"
             //"*.js"

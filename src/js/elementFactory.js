@@ -3,9 +3,6 @@ var ElementFactory = function() {
         return new Tank();
     },
     this.createWell = function() {
-        var wall = document.createElement('div');
-        wall.className = 'wall grid-element';
-        gridDocument.appendChild(wall);
-        return new GridElement(wall);
+        return new Well();
     }
 }

@@ -7,10 +7,10 @@ var GridElement = function(document) {
     this.height = null;
 }
 
-GridElement.prototype.updateSize = function(){
+/*GridElement.prototype.updateSize = function(){
     this.width = this.document.offsetWidth / this.grid.pxStep;
     this.height = this.document.offsetHeight / this.grid.pxStep;
-}
+}*/
 GridElement.prototype.getVerticalSize = function() {
     return {
         begin: this.y,
@@ -95,7 +95,7 @@ GridElement.behavior.movable =  {
                 return;
             }
 
-            this.grid.drawElement(this);
+            //this.grid.drawElement(this);
         }
     }
 }

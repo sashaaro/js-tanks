@@ -1,5 +1,4 @@
-var gridDocument = document.getElementById('grid');
-var grid = new Grid(gridDocument, 4);
+var grid = new Grid();
 
 var gridControl = new GridElementControl();
 var ef = new ElementFactory();
@@ -40,8 +39,8 @@ grid.addElement(enemyTank, 100, 100);
 //extend(enemyTank, GridElement.behavior.movable);
 gridControl.computer(enemyTank);
 
-
-var render = new Render(grid);
+var gridDocument = document.getElementById('grid');
+var render = new Render(grid, gridDocument, 4);
 var game = new Game(grid, render);
 game.run(70);
 
