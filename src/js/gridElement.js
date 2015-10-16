@@ -1,4 +1,3 @@
-
 var GridElement = function(document) {
     this.document = document;
     this.grid = null;
@@ -34,6 +33,8 @@ GridElement.prototype.getHorizontalSize = function() {
         end: this.x + this.width
     };
 }
+
+
 GridElement.behavior = {};
 GridElement.behavior.movable =  {
     nextMoveDirection: 'right',

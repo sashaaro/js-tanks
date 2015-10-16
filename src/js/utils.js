@@ -1,5 +1,5 @@
-var helper = {
-    coverRange: function (begin1, end1, begin2, end2) {
+var utils = {
+    isCoverRange: function (begin1, end1, begin2, end2) {
         return !(begin1 >= end2 || end1 <= begin2);
     },
     extend: function(object)

@@ -21,6 +21,6 @@ var Grid = function(document, pxStep) {
     }
 
     this.isSideHit = function (size, otherSize) {
-        return helper.coverRange(size.begin, size.end, otherSize.begin, otherSize.end)
+        return utils.isCoverRange(size.begin, size.end, otherSize.begin, otherSize.end)
     }
 }

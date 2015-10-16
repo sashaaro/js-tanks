@@ -12,12 +12,14 @@ var scripts = paths.scripts + '/*.js';
 gulp.task('scripts', function() {
     return gulp.src(scripts)
         .pipe(order([
-            "helper.js",
+            "utils.js",
             "grid.js",
             "gridElement.js",
             "gridElementControl.js",
             "elementFactory.js",
             "tank.js",
+            "render.js",
+            "game.js"
             //"*.js"
         ]))
         //.pipe(uglify())

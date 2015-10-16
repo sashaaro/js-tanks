@@ -32,7 +32,7 @@ border.setWidth(grid.width);
 var myTank = ef.createTank();
 grid.addElement(myTank, 10, 10);
 gridControl.take(myTank);
-helper.extend(myTank, GridElement.behavior.movable);
+utils.extend(myTank, GridElement.behavior.movable);
 //myTank.moveSpeed = 3;
 
 var enemyTank = ef.createTank();
@@ -41,12 +41,17 @@ grid.addElement(enemyTank, 100, 100);
 gridControl.computer(enemyTank);
 
 
+var render = new Render(grid);
+var game = new Game(grid, render);
+game.run(70);
 
+
+/*
 setInterval(function() {
     for(var prop in grid.elements) {
         var element = grid.elements[prop];
-        if((helper.hasBehaviour(element, GridElement.behavior.movable))) {
+        if((utils.hasBehaviour(element, GridElement.behavior.movable))) {
             element.move();
         }
     }
-}, 70)
+}, 70)*/
