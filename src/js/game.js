@@ -7,6 +7,7 @@ var Game = function(grid, render)
 Game.prototype.run = function(delay)
 {
     var that = this;
+    this.render.drawElement(this.grid);
     setInterval(function() {
         that.time();
         that.render.reDraw();

@@ -1,5 +1,6 @@
-var grid = new Grid();
+var grid = new Grid(150, 150);
 
+grid.document = document.getElementById('grid')
 var gridControl = new GridElementControl();
 var ef = new ElementFactory();
 

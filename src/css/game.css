@@ -1,7 +1,7 @@
 #grid {
     position: relative;
-    width: 600px;
-    height: 600px;
+    /*width: 600px;
+    height: 600px;*/
 
     background-image: url(../image/ground3_4_2.jpg);
     background-repeat: repeat-y, repeat-y;
