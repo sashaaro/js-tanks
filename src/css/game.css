@@ -1,18 +1,12 @@
 #grid {
     position: relative;
-    /*width: 600px;
-    height: 600px;*/
-
     background-image: url(../image/ground3_4_2.jpg);
     background-repeat: repeat-y, repeat-y;
     background-size: 100% auto;
 }
 
 .grid-element {
-    /*width: 40px;
-    height: 40px;*/
     position: absolute;
-
 }
 
 .tank {

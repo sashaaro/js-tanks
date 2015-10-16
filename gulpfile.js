@@ -8,23 +8,23 @@ var paths = {
     scripts: 'src/js'
 };
 
-var scripts = paths.scripts + '/*.js';
+var scripts = paths.scripts + '/**/*.js';
 gulp.task('scripts', function() {
     return gulp.src(scripts)
         .pipe(order([
             "utils.js",
-            "grid.js",
-            "gridElement.js",
-            "gridElementControl.js",
-            "tank.js",
-            "well.js",
-            "elementFactory.js",
-            "render.js",
-            "game.js"
-            //"*.js"
+            "grid/grid.js",
+            "grid/gridElement.js",
+            "grid/gridElementControl.js",
+            "grid/game.js",
+            "grid/render.js",
+
+            "tanks/tank.js",
+            "tanks/well.js",
+            "tanks/weapon.js"
         ]))
         //.pipe(uglify())
-        .pipe(concat('tanks.min.js'))
+        .pipe(concat('tanks.js'))
         .pipe(gulp.dest('dist'));
 });
 
