@@ -7,25 +7,11 @@ var GridElement = function(document) {
     this.height = null;
 }
 
-/*GridElement.prototype.updateSize = function(){
-    this.width = this.document.offsetWidth / this.grid.pxStep;
-    this.height = this.document.offsetHeight / this.grid.pxStep;
-}*/
 GridElement.prototype.getVerticalSize = function() {
     return {
         begin: this.y,
         end: this.y + this.height
     };
-}
-GridElement.prototype.setWidth = function(width)
-{
-    this.width = width;
-    this.document.style.width = this.width * this.grid.pxStep;
-}
-GridElement.prototype.setHeight = function(height)
-{
-    this.height = height;
-    this.document.style.height = this.height * this.grid.pxStep;
 }
 GridElement.prototype.getHorizontalSize = function() {
     return {
@@ -94,8 +80,6 @@ GridElement.behavior.movable =  {
                 new Error('Error');
                 return;
             }
-
-            //this.grid.drawElement(this);
         }
     }
 }

@@ -1,15 +1,17 @@
 var GridElementControl = function() {
+    var directions = {
+        37: 'left',
+        38: 'up',
+        39: 'right',
+        40: 'down'
+    }
+
     this.take = function(gridElement) {
         document.addEventListener('keyup', function(e) {
             gridElement.moveStatus = true;
-            if(e.keyIdentifier == 'Up') {
-                gridElement.nextMoveDirection = 'up';
-            }else if(e.keyIdentifier == 'Down') {
-                gridElement.nextMoveDirection = 'down';
-            }else if(e.keyIdentifier == 'Left') {
-                gridElement.nextMoveDirection = 'left';
-            }else if(e.keyIdentifier == 'Right') {
-                gridElement.nextMoveDirection = 'right';
+            var direction = directions[e.keyCode];
+            if(direction) {
+                gridElement.nextMoveDirection = direction;
             }
         });
     }
