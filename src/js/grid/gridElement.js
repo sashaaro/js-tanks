@@ -87,3 +87,8 @@ GridElement.behavior.movable = {
 GridElement.behavior.rotatable = {
     rotatePercent: 0 //percent turn
 }
+
+GridElement.behavior.embedable = {
+    addElements: [],
+    elements: []
+}

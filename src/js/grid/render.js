@@ -34,4 +34,9 @@ Render.prototype.drawElement = function(gridElement) {
     if(utils.hasBehaviour(gridElement, GridElement.behavior.rotatable)) {
         gridElement.document.style.webkitTransform = 'rotate(' + (gridElement.rotatePercent / 100) + 'turn)';
     }
+
+    if(utils.hasBehaviour(gridElement, GridElement.behavior.embedable)) {
+        var render = new Render(gridElement, gridElement.document, this.pxStep);
+        render.reDraw();
+    }
 }

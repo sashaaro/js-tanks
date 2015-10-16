@@ -28,6 +28,11 @@ border.width = grid.width;
 
 
 var myTank = new Tank();
+utils.extend(myTank, GridElement.behavior.embedable);
+
+var weapon = new Weapon();
+myTank.addElements.push(weapon);
+
 grid.addElement(myTank, 10, 10);
 gridControl.take(myTank);
 //myTank.moveSpeed = 3;
