@@ -28,7 +28,7 @@ var GridElementControl = function() {
     this.computer = function(gridElement) {
         setInterval(function() {
             var directions = ['left', 'right', 'up', 'down'];
-            var direction = directions[Math.floor((Math.random() * 3))];
+            var direction = directions[Math.floor(Math.random() * directions.length)];
             if(direction) {
                 gridElement.nextMoveDirection = direction;
 
