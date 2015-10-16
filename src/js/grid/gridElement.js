@@ -22,7 +22,7 @@ GridElement.prototype.getHorizontalSize = function() {
 
 
 GridElement.behavior = {};
-GridElement.behavior.movable =  {
+GridElement.behavior.movable = {
     nextMoveDirection: 'right',
     moveSpeed: 1,
     moveStatus: true,
@@ -82,4 +82,8 @@ GridElement.behavior.movable =  {
             }
         }
     }
+}
+
+GridElement.behavior.rotatable = {
+    rotatePercent: 0 //percent turn
 }

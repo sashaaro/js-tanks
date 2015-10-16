@@ -23,7 +23,7 @@ var utils = {
     hasBehaviour: function (object, behaviour)
     {
         for(var property in behaviour) {
-            if(!object[property]) {
+            if(object[property] === undefined) {
                 return false;
             }
         }

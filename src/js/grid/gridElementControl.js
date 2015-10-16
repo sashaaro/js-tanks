@@ -5,6 +5,12 @@ var GridElementControl = function() {
         39: 'right',
         40: 'down'
     }
+    var rotates = {
+        left: -25,
+        up: 0,
+        right: 25,
+        down: 50
+    }
 
     this.take = function(gridElement) {
         document.addEventListener('keyup', function(e) {
@@ -12,13 +18,24 @@ var GridElementControl = function() {
             var direction = directions[e.keyCode];
             if(direction) {
                 gridElement.nextMoveDirection = direction;
+
+                if (utils.hasBehaviour(gridElement, GridElement.behavior.rotatable)) {
+                    gridElement.rotatePercent = rotates[direction];
+                }
             }
         });
     }
     this.computer = function(gridElement) {
         setInterval(function() {
-            var direction = ['left', 'right', 'up', 'down'];
-            gridElement.nextMoveDirection = direction[Math.floor((Math.random() * 3))];
+            var directions = ['left', 'right', 'up', 'down'];
+            var direction = directions[Math.floor((Math.random() * 3))];
+            if(direction) {
+                gridElement.nextMoveDirection = direction;
+
+                if (utils.hasBehaviour(gridElement, GridElement.behavior.rotatable)) {
+                    gridElement.rotatePercent = rotates[direction];
+                }
+            }
             if(!gridElement.moveStatus) {
                 gridElement.moveStatus = true;
             }

@@ -30,12 +30,10 @@ border.width = grid.width;
 var myTank = new Tank();
 grid.addElement(myTank, 10, 10);
 gridControl.take(myTank);
-utils.extend(myTank, GridElement.behavior.movable);
 //myTank.moveSpeed = 3;
 
 var enemyTank = new Tank();
 grid.addElement(enemyTank, 100, 100);
-utils.extend(enemyTank, GridElement.behavior.movable);
 gridControl.computer(enemyTank);
 
 var gridDocument = document.getElementById('grid');

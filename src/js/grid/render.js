@@ -23,9 +23,15 @@ Render.prototype.reDraw = function ()
 }
 
 Render.prototype.drawElement = function(gridElement) {
+    //if(utils.hasBehaviour(gridElement, GridElement.behavior.movable)) {
     gridElement.document.style.left = gridElement.x * this.pxStep;
     gridElement.document.style.top = gridElement.y * this.pxStep;
+    //}
 
     gridElement.document.style.width = gridElement.width * this.pxStep;
     gridElement.document.style.height = gridElement.height * this.pxStep;
+
+    if(utils.hasBehaviour(gridElement, GridElement.behavior.rotatable)) {
+        gridElement.document.style.webkitTransform = 'rotate(' + (gridElement.rotatePercent / 100) + 'turn)';
+    }
 }
