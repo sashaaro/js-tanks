@@ -17,10 +17,10 @@ GridElement.behavior.hitable = {
             ) {
                 isHit = true;
                 if(element.hitTrigger) {
-                    element.hitTrigger(this);
+                    element.hitTrigger(that);
                 }
-                if(this.hitTrigger) {
-                    this.hitTrigger(element);
+                if(that.hitTrigger) {
+                    that.hitTrigger(element);
                 }
             }
         });

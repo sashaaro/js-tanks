@@ -1,7 +1,5 @@
 var grid = new Grid(150, 150);
-
 grid.document = document.getElementById('grid');
-var gridControl = new GridElementControl();
 
 /*grid.addElement(ef.createWell(), 0, 40);
 grid.addElement(ef.createWell(), 10, 40);
@@ -29,6 +27,32 @@ grid.addElement(border);
 border.width = grid.width;
 
 
+
+border = new Well();
+border.x = 20;
+border.y = 130;
+grid.addElement(border);
+
+border = new Well();
+border.x = 20;
+border.y = 120;
+grid.addElement(border);
+
+border = new Well();
+border.x = 20;
+border.y = 110;
+grid.addElement(border);
+
+border = new Well();
+border.x = 30;
+border.y = 110;
+grid.addElement(border);
+border = new Well();
+border.x = 40;
+border.y = 110;
+grid.addElement(border);
+
+
 var myTank = new Tank();
 utils.extend(myTank, GridElement.behavior.embedable);
 
@@ -36,16 +60,23 @@ var weapon = new Weapon();
 myTank.addElement(weapon);
 
 myTank.x = 10;
-myTank.y = 10;
-grid.addElement(myTank, 10, 10);
-gridControl.take(myTank);
+myTank.y = 130;
+myTank.nextMoveDirection = 'up';
+grid.addElement(myTank);
 //myTank.moveSpeed = 3;
 
 var enemyTank = new Tank();
 enemyTank.x = 100;
 enemyTank.y = 100;
-grid.addElement(enemyTank, 100, 100);
+grid.addElement(enemyTank);
+
+
+
+var gridControl = new GridElementControl();
+
+gridControl.take(myTank);
 gridControl.computer(enemyTank);
+
 
 var gridDocument = document.getElementById('grid');
 var render = new Render(grid, gridDocument, 4);

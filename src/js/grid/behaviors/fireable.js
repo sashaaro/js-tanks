@@ -7,8 +7,8 @@ GridElement.behavior.fireable = {
         utils.extend(this.bullet, GridElement.behavior.rotatable);
         this.bullet.rotatePercent = this.grid.rotatePercent - 25;//todo remove
 
-        this.bullet.x = this.grid.x;
-        this.bullet.y = this.grid.y;
+        this.bullet.x = this.grid.x + 10;
+        this.bullet.y = this.grid.y + 10;
 
         this.grid.addElement(this.bullet);
     }

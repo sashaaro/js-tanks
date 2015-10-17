@@ -16,5 +16,4 @@ Bullet.prototype.hitTrigger = function(element)
 {
     this.grid.removeElements.push(this);
     this.grid.removeElements.push(element);
-    console.log(1);
 }
