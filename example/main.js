@@ -53,6 +53,19 @@ border.y = 110;
 grid.addElement(border);
 
 
+border = new Well();
+border.x = 130;
+border.y = 120;
+grid.addElement(border);
+border.document.className = 'steel grid-element'; //move to out
+border = new Well();
+border.x = 120;
+border.y = 120;
+grid.addElement(border);
+border.document.className = 'steel grid-element'; //move to out
+
+
+
 var myTank = new Tank();
 utils.extend(myTank, GridElement.behavior.embedable);
 
