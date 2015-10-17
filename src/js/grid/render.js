@@ -3,6 +3,7 @@ var Render = function(grid, document, pxStep)
     this.grid = grid;
     this.document = document;
     this.pxStep = pxStep || 2;
+    this.parent = null;
 }
 
 Render.prototype.reDraw = function ()
@@ -37,6 +38,14 @@ Render.prototype.drawElement = function(gridElement) {
 
     if(utils.hasBehaviour(gridElement, GridElement.behavior.embedable)) {
         var render = new Render(gridElement, gridElement.document, this.pxStep);
+        render.parent = this;
         render.reDraw();
+    }
+
+    if(utils.hasBehaviour(gridElement, GridElement.behavior.fireable) && gridElement.bullet) {
+        gridElement.bullet.x = gridElement.grid.x;
+        gridElement.bullet.y = gridElement.grid.y;
+        this.grid.grid.addElement(gridElement.bullet);
+        gridElement.bullet = null;
     }
 }

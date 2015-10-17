@@ -7,9 +7,7 @@ var Grid = function(width, height) {
 
     this.document = null;
 
-    this.addElement = function(gridElement, x, y) {
-        gridElement.x = x;
-        gridElement.y = y;
+    this.addElement = function(gridElement) {
         gridElement.grid = this;
 
         this.addElements.push(gridElement);

@@ -3,8 +3,8 @@ var GridElement = function(document) {
     this.grid = null;
     this.x = null;
     this.y = null;
-    this.width = null;
-    this.height = null;
+    this.width = 0;
+    this.height = 0;
 }
 
 GridElement.prototype.getVerticalSize = function() {
@@ -90,5 +90,27 @@ GridElement.behavior.rotatable = {
 
 GridElement.behavior.embedable = {
     addElements: [],
-    elements: []
+    elements: [],
+    addElement: function(gridElement) {
+        this.addElements.push(gridElement);
+        gridElement.grid = this;
+    },
+}
+
+GridElement.behavior.fireable = {
+    bullet: null,
+    fire: function() {
+        this.bullet = new Bullet();
+        this.bullet.nextMoveDirection = this.grid.nextMoveDirection;
+        this.bullet.moveStatus = true;
+        console.log(this.grid.x);
+        console.log(this.grid.y);
+        this.bullet.x = this.grid.x;
+        this.bullet.y = this.grid.y;
+        utils.extend(this.bullet, GridElement.behavior.rotatable);
+        this.bullet.rotatePercent = this.grid.rotatePercent - 25;//todo remove
+
+        this.grid.addElement(this.bullet);
+        //console.log(utils.hasBehaviour(this.bullet, GridElement.behavior.movable))
+    }
 }

@@ -6,10 +6,9 @@ var Weapon = function() {
     this.height = 5;
     this.width = 8;
     this.x = 1.2;
+
+    this.bullet = null;
 };
 Weapon.prototype = Object.create(GridElement.prototype);
 Weapon.prototype.constructor = Weapon;
-
-Weapon.prototype.fire = function() {
-    
-}
+utils.extend(Weapon, GridElement.behavior.fireable);

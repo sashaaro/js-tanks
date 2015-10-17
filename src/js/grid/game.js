@@ -21,5 +21,12 @@ Game.prototype.time = function()
         if((utils.hasBehaviour(element, GridElement.behavior.movable))) {
             element.move();
         }
+        if(element.elements) {
+            var render = new Render(element, element.document, this.render.pxStep);
+            var game = new Game(element, render);
+            render.drawElement(game.grid);
+            game.time();
+            game.render.reDraw();
+        }
     }
 }

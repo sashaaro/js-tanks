@@ -22,6 +22,8 @@ var GridElementControl = function() {
                 if (utils.hasBehaviour(gridElement, GridElement.behavior.rotatable)) {
                     gridElement.rotatePercent = rotates[direction];
                 }
+            } else if(e.keyCode == 32 && utils.hasBehaviour(gridElement.elements[0], GridElement.behavior.fireable)) {
+                gridElement.elements[0].fire();
             }
         });
     }
