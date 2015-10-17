@@ -10,3 +10,11 @@ Bullet.prototype = Object.create(GridElement.prototype);
 Bullet.prototype.constructor = Bullet;
 
 utils.extend(Bullet, GridElement.behavior.movable);
+utils.extend(Bullet, GridElement.behavior.hitable);
+
+Bullet.prototype.hitTrigger = function(element)
+{
+    this.grid.removeElements.push(this);
+    this.grid.removeElements.push(element);
+    console.log(1);
+}

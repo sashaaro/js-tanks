@@ -9,5 +9,6 @@ var Tank = function () {
 Tank.prototype = Object.create(GridElement.prototype);
 Tank.prototype.constructor = Tank;
 
+utils.extend(Tank, GridElement.behavior.hitable);
 utils.extend(Tank, GridElement.behavior.movable);
 utils.extend(Tank, GridElement.behavior.rotatable);

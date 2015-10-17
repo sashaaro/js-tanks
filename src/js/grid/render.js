@@ -18,9 +18,17 @@ Render.prototype.reDraw = function ()
     this.grid.addElements = [];
 
     for(var key in this.grid.elements) {
-        var gridElement = this.grid.elements[key];
-        this.drawElement(gridElement);
+        var gridElement = this.grid.elements[key];;
+        if(this.grid.removeElements.indexOf(gridElement) === -1) {
+            this.drawElement(gridElement);
+        } else if(gridElement.document.parentNode) {
+            gridElement.document.parentNode.removeChild(gridElement.document);
+            //this.grid.document.removeChild(gridElement.document);
+            delete this.grid.elements[this.grid.elements.indexOf(gridElement)] // todo move out
+        }
     }
+
+    this.grid.removeElements = [];
 }
 
 Render.prototype.drawElement = function(gridElement) {
@@ -42,7 +50,7 @@ Render.prototype.drawElement = function(gridElement) {
         render.reDraw();
     }
 
-    if(utils.hasBehaviour(gridElement, GridElement.behavior.fireable) && gridElement.bullet) {
+    if(utils.hasBehaviour(gridElement, GridElement.behavior.fireable) && gridElement.bullet) { //todo move to
         gridElement.bullet.x = gridElement.grid.x;
         gridElement.bullet.y = gridElement.grid.y;
         this.grid.grid.addElement(gridElement.bullet);

@@ -8,3 +8,5 @@ var Well = function () {
 };
 Well.prototype = Object.create(GridElement.prototype);
 Well.prototype.constructor = Well;
+
+utils.extend(Well, GridElement.behavior.hitable);

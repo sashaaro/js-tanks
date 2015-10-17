@@ -1,6 +1,7 @@
 var Grid = function(width, height) {
     this.elements = [];
     this.addElements = [];
+    this.removeElements = [];
 
     this.width = width;
     this.height = height;
