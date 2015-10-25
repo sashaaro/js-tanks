@@ -1,0 +1,19 @@
+{
+  "name": "tanks",
+  "version": "0.0.0",
+  "authors": [
+    "Arofikin Alexandr <sashaaro@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
