@@ -55,12 +55,12 @@ OneLevel.prototype.init = function()
     border.x = 130;
     border.y = 120;
     this.grid.addElement(border);
-    border.document.className = 'steel grid-element'; //move to out
+    border.document.className = 'steel grid-element'; //todo move to out
     border = new Well();
     border.x = 120;
     border.y = 120;
     this.grid.addElement(border);
-    border.document.className = 'steel grid-element'; //move to out
+    border.document.className = 'steel grid-element'; //todo move to out
 
 
 
@@ -74,7 +74,7 @@ OneLevel.prototype.init = function()
     myTank.y = 130;
     myTank.nextMoveDirection = 'up';
     this.grid.addElement(myTank);
-//myTank.moveSpeed = 3;
+    //myTank.moveSpeed = 3;
 
     var enemyTank = new Tank();
     enemyTank.x = 100;
