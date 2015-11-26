@@ -1,4 +1,9 @@
 {
+  "name": "tanks",
+  "version": "0.0.1",
+  "authors": [
+    "Arofikin Alexandr <sashaaro@gmail.com>"
+  ],
   "devDependencies": {
     "gulp": "*",
     "gulp-babel": "~5.3.0",

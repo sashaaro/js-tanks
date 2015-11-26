@@ -11,7 +11,7 @@ game.timeHandlers.push(oneLevel);
 game.run(70);
 
 //fun
-grid.document.addEventListener('click', function(e) {
+/*grid.document.addEventListener('click', function(e) {
     var enemyTank = new Tank();
     enemyTank.x = e.clientX / render.pxStep;
     enemyTank.y = e.clientY / render.pxStep;
@@ -19,4 +19,4 @@ grid.document.addEventListener('click', function(e) {
 
     var gridControl = new GridElementControl();
     gridControl.computer(enemyTank);
-});
+});*/
