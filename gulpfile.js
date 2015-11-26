@@ -24,7 +24,8 @@ gulp.task('scripts', function() {
 
             "tanks/tank.js",
             "tanks/well.js",
-            "tanks/weapon.js"
+            "tanks/weapon.js",
+            "tanks/multi/socket.js"
         ]))
         //.pipe(uglify())
         .pipe(concat('tanks.js'))

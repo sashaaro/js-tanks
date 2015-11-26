@@ -1,4 +1,4 @@
-var Render = function(grid, document, pxStep)
+var HtmlRender = function(grid, document, pxStep)
 {
     this.grid = grid;
     this.document = document;
@@ -6,7 +6,7 @@ var Render = function(grid, document, pxStep)
     this.parent = null;
 }
 
-Render.prototype.reDraw = function ()
+HtmlRender.prototype.reDraw = function ()
 {
     for(var key in this.grid.addElements) {
         var addGridElement = this.grid.addElements[key];
@@ -31,7 +31,7 @@ Render.prototype.reDraw = function ()
     this.grid.removeElements = [];
 }
 
-Render.prototype.drawElement = function(gridElement) {
+HtmlRender.prototype.drawElement = function(gridElement) {
     //if(utils.hasBehaviour(gridElement, GridElement.behavior.movable)) {
     gridElement.document.style.left = gridElement.x * this.pxStep;
     gridElement.document.style.top = gridElement.y * this.pxStep;
@@ -45,7 +45,7 @@ Render.prototype.drawElement = function(gridElement) {
     }
 
     if(utils.hasBehaviour(gridElement, GridElement.behavior.embedable)) {
-        var render = new Render(gridElement, gridElement.document, this.pxStep);
+        var render = new HtmlRender(gridElement, gridElement.document, this.pxStep);
         render.parent = this;
         render.reDraw();
     }

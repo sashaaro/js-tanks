@@ -22,7 +22,7 @@ Game.prototype.time = function()
             element.move();
         }
         if(element.elements) {
-            var render = new Render(element, element.document, this.render.pxStep);
+            var render = new HtmlRender(element, element.document, this.render.pxStep);
             var game = new Game(element, render);
             render.drawElement(game.grid);
             game.time();

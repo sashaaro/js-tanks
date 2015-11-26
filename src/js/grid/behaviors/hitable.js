@@ -10,6 +10,10 @@ GridElement.behavior.hitable = {
                 return;
             }
 
+            if (direction == element.nextMoveDirection) {
+                return;
+            }
+//console.log(1)
             if (direction == 'left' && element.x + element.width == that.x && that.grid.isSideHit(element.getVerticalSize(), that.getVerticalSize()) ||
                 direction == 'right' && element.x == that.x + that.width && that.grid.isSideHit(element.getVerticalSize(), that.getVerticalSize()) ||
                 direction == 'up' && element.y + element.height == that.y && that.grid.isSideHit(element.getHorizontalSize(), that.getHorizontalSize()) ||
