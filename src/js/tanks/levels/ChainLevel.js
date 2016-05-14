@@ -1,5 +1,5 @@
-import Level from './level.js';
-import OneLevel from './oneLevel.js';
+import Level from './Level.js';
+import OneLevel from './OneLevel.js';
 
 class ChainLevel extends Level {
     constructor() {

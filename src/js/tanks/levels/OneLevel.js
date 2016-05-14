@@ -1,10 +1,10 @@
 import utils from '../../utils.js';
-import Level from './level.js';
-import Well from '../well.js';
-import Tank from '../tank.js';
-import Weapon from '../weapon.js';
-import GridElementControl from '../../grid/gridElementControl.js';
-import GridElement from '../../grid/gridElement.js';
+import Level from './Level.js';
+import Well from '../Well.js';
+import Tank from '../Tank.js';
+import Weapon from '../Weapon.js';
+import GridElementControl from '../../grid/GridElementControl.js';
+import GridElement from '../../grid/GridElement.js';
 
 class OneLevel extends Level {
     init () {

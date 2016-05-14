@@ -1,6 +1,6 @@
 import utils from '../utils.js';
-import GridElement from '../grid/gridElement.js';
-import HtmlRender from './htmlRender.js';
+import GridElement from '../grid/GridElement.js';
+import HtmlRender from './HtmlRender.js';
 
 class Game {
     constructor(grid, render) {

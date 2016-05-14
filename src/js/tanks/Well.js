@@ -1,12 +1,11 @@
 import utils from '../utils.js';
-import GridElement from '../grid/gridElement.js';
+import GridElement from '../grid/GridElement.js';
 
 class Well extends GridElement {
     constructor() {
-        super();
         var wall = document.createElement('div');
         wall.className = 'wall grid-element';
-        GridElement.call(this, wall);
+        super(wall);
 
         this.height = 10;
         this.width = 10;

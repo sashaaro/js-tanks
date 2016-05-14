@@ -1,12 +1,11 @@
 import utils from '../utils.js';
-import GridElement from '../grid/gridElement.js';
+import GridElement from '../grid/GridElement.js';
 
 class Tank extends GridElement {
     constructor() {
-        super();
         var tank = document.createElement('div');
         tank.className = 'tank grid-element';
-        GridElement.call(this, tank);
+        super(tank);
 
         this.height = 10;
         this.width = 10;

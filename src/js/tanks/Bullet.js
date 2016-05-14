@@ -1,12 +1,11 @@
 import utils from '../utils.js';
-import GridElement from '../grid/gridElement.js';
+import GridElement from '../grid/GridElement.js';
 
 class Bullet extends GridElement {
     constructor() {
-        super();
         var bullet = document.createElement('div');
         bullet.className = 'bullet grid-element';
-        GridElement.call(this, bullet);
+        super(bullet);
 
         this.height = 5;
         this.width = 8;

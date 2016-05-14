@@ -1,5 +1,5 @@
 import utils from '../utils.js';
-import GridElement from './gridElement.js';
+import GridElement from './GridElement.js';
 
 class Grid {
     constructor(width, height) {
