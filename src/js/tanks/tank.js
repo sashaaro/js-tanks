@@ -1,3 +1,6 @@
+import utils from '../utils.js';
+import GridElement from '../grid/gridElement.js';
+
 var Tank = function () {
     var tank = document.createElement('div');
     tank.className = 'tank grid-element';
@@ -12,3 +15,5 @@ Tank.prototype.constructor = Tank;
 utils.extend(Tank, GridElement.behavior.hitable);
 utils.extend(Tank, GridElement.behavior.movable);
 utils.extend(Tank, GridElement.behavior.rotatable);
+
+export default Tank;

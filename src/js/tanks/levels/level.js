@@ -11,3 +11,5 @@ Level.prototype.time = function()
 {
     throw new Error('Level have not implementation');
 }
+
+export default Level;

@@ -30,3 +30,5 @@ var utils = {
         return true;
     }
 };
+
+export default utils;

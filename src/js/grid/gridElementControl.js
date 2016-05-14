@@ -1,3 +1,6 @@
+import utils from '../utils.js';
+import GridElement from './gridElement.js';
+
 var GridElementControl = function() {
 }
 GridElementControl.DIRECTIONS = {
@@ -58,3 +61,5 @@ GridElementControl.prototype.socketServer = function(gridElement, socket) {
         socket.send(e.keyCode);
     });
 }
+
+export default GridElementControl;

@@ -1,3 +1,6 @@
+import utils from '../utils.js';
+import GridElement from '../grid/gridElement.js';
+
 var Well = function () {
     var wall = document.createElement('div');
     wall.className = 'wall grid-element';
@@ -10,3 +13,5 @@ Well.prototype = Object.create(GridElement.prototype);
 Well.prototype.constructor = Well;
 
 utils.extend(Well, GridElement.behavior.hitable);
+
+export default Well;

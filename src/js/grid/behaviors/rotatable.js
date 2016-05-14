@@ -1,3 +1,2 @@
-GridElement.behavior.rotatable = {
-    rotatePercent: 0 //percent turn
-}
+import GridElement from '../gridElement.js';
+

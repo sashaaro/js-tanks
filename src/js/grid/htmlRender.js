@@ -1,3 +1,6 @@
+import utils from '../utils.js';
+import GridElement from './gridElement.js';
+
 var HtmlRender = function(grid, document, pxStep)
 {
     this.grid = grid;
@@ -57,3 +60,5 @@ HtmlRender.prototype.drawElement = function(gridElement) {
         gridElement.bullet = null;
     }
 }
+
+export default HtmlRender;

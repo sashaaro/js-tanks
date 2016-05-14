@@ -1,0 +1,22 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <link href="src/css/game.css" rel="stylesheet">
+</head>
+<body>
+    <div id="grid">
+
+    </div>
+
+    <script src="node_modules/systemjs/dist/system.js"></script>
+    <script>
+        System.config({
+            baseURL: '/dist'
+        });
+
+        System.import('run.js').then(function() {
+        });
+    </script>
+</body>
+</html>

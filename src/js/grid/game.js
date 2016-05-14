@@ -1,9 +1,13 @@
+import utils from '../utils.js';
+import GridElement from '../grid/gridElement.js';
+import HtmlRender from './htmlRender.js';
+
 var Game = function(grid, render)
 {
     this.grid = grid;
     this.render = render;
     this.timeHandlers = [];
-    this.timeHandlers.push(new ReRenderTimeHandler())
+    this.timeHandlers.push(new ReRenderTimeHandler());
     this.intervalID = null;
 }
 
@@ -47,3 +51,5 @@ function ReRenderTimeHandler() {
         }
     }
 }
+
+export default Game;

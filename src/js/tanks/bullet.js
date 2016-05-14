@@ -1,3 +1,6 @@
+import utils from '../utils.js';
+import GridElement from '../grid/gridElement.js';
+
 var Bullet = function() {
     var bullet = document.createElement('div');
     bullet.className = 'bullet grid-element';
@@ -6,6 +9,8 @@ var Bullet = function() {
     this.height = 5;
     this.width = 8;
 };
+
+
 Bullet.prototype = Object.create(GridElement.prototype);
 Bullet.prototype.constructor = Bullet;
 
@@ -17,3 +22,5 @@ Bullet.prototype.hitTrigger = function(element)
     this.grid.removeElements.push(this);
     this.grid.removeElements.push(element);
 }
+
+export default Bullet;

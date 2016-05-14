@@ -1,3 +1,6 @@
+import Level from './level.js';
+import OneLevel from './oneLevel.js';
+
 ChainLevel = function() {
     this.levels = [];
 }
@@ -13,3 +16,5 @@ ChainLevel.prototype.time = function()
         }
     });
 }
+
+export default ChainLevel;

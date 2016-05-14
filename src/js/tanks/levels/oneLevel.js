@@ -1,3 +1,11 @@
+import utils from '../../utils.js';
+import Level from './level.js';
+import Well from '../well.js';
+import Tank from '../tank.js';
+import Weapon from '../weapon.js';
+import GridElementControl from '../../grid/gridElementControl.js';
+import GridElement from '../../grid/gridElement.js';
+
 function OneLevel()
 {
     Level.apply(this, arguments);
@@ -102,3 +110,5 @@ OneLevel.prototype.time = function(game)
         alert('win'); //next level
     }
 }
+
+export default OneLevel;

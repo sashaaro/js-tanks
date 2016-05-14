@@ -1,3 +1,6 @@
+import utils from '../utils.js';
+import GridElement from './gridElement.js';
+
 var Grid = function(width, height) {
     this.elements = [];
     this.addElements = [];
@@ -18,3 +21,5 @@ var Grid = function(width, height) {
         return utils.isCoverRange(size.begin, size.end, otherSize.begin, otherSize.end)
     }
 }
+
+export default Grid;
