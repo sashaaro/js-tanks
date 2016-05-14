@@ -1,20 +1,19 @@
 import Level from './level.js';
 import OneLevel from './oneLevel.js';
 
-ChainLevel = function() {
-    this.levels = [];
-}
+class ChainLevel extends Level {
+    constructor() {
+        super();
+        this.levels = [];
+    }
 
-ChainLevel.prototype = Object.create(Level);
-ChainLevel.prototype.constructor = OneLevel;
+    time () {
+        this.levels.forEach(function(level, index) {
+            if (level.time()) {
 
-ChainLevel.prototype.time = function()
-{
-    this.levels.forEach(function(level, index) {
-        if (level.time()) {
-
-        }
-    });
+            }
+        });
+    }
 }
 
 export default ChainLevel;

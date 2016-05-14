@@ -1,15 +1,13 @@
-function Level(grid) {
-    this.grid = grid;
-}
-
-Level.prototype.init = function()
-{
-    throw new Error('Level have not implementation');
-}
-
-Level.prototype.time = function()
-{
-    throw new Error('Level have not implementation');
+class Level {
+    constructor(grid) {
+        this.grid = grid;
+    }
+    init () {
+        throw new Error('Level have not implementation');
+    }
+    time () {
+        throw new Error('Level have not implementation');
+    }
 }
 
 export default Level;
