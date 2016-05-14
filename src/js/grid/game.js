@@ -2,36 +2,31 @@ import utils from '../utils.js';
 import GridElement from '../grid/gridElement.js';
 import HtmlRender from './htmlRender.js';
 
-var Game = function(grid, render)
-{
-    this.grid = grid;
-    this.render = render;
-    this.timeHandlers = [];
-    this.timeHandlers.push(new ReRenderTimeHandler());
-    this.intervalID = null;
-}
-
-Game.prototype.run = function(delay)
-{
-    var that = this;
-    this.render.drawElement(this.grid);
-    this.intervalID = setInterval(function() {
-        that.time();
-        that.render.reDraw();
-    }, delay);
-}
-
-Game.prototype.over = function()
-{
-    clearInterval(this.intervalID);
-}
-
-Game.prototype.time = function()
-{
-    var that = this;
-    this.timeHandlers.forEach(function(handler){
-        handler.time(that);
-    })
+class Game {
+    constructor(grid, render) {
+        this.grid = grid;
+        this.render = render;
+        this.timeHandlers = [];
+        this.timeHandlers.push(new ReRenderTimeHandler());
+        this.intervalID = null;
+    }
+    run(delay) {
+        var that = this;
+        this.render.drawElement(this.grid);
+        this.intervalID = setInterval(function() {
+            that.time();
+            that.render.reDraw();
+        }, delay);
+    }
+    over() {
+        clearInterval(this.intervalID);
+    }
+    time() {
+        var that = this;
+        this.timeHandlers.forEach(function(handler){
+            handler.time(that);
+        })
+    }
 }
 
 function ReRenderTimeHandler() {

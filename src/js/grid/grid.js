@@ -1,24 +1,23 @@
 import utils from '../utils.js';
 import GridElement from './gridElement.js';
 
-var Grid = function(width, height) {
-    this.elements = [];
-    this.addElements = [];
-    this.removeElements = [];
+class Grid {
+    constructor(width, height) {
+        this.elements = [];
+        this.addElements = [];
+        this.removeElements = [];
 
-    this.width = width;
-    this.height = height;
+        this.width = width;
+        this.height = height;
 
-    this.document = null;
-
-    this.addElement = function(gridElement) {
+        this.document = null;
+    }
+    addElement(gridElement) {
         gridElement.grid = this;
-
         this.addElements.push(gridElement);
     }
-
-    this.isSideHit = function (size, otherSize) {
-        return utils.isCoverRange(size.begin, size.end, otherSize.begin, otherSize.end)
+    isSideHit(size, otherSize) {
+        return utils.isCoverRange(size.begin, size.end, otherSize.begin, otherSize.end);
     }
 }
 

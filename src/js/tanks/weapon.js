@@ -2,19 +2,20 @@ import utils from '../utils.js';
 import Bullet from './bullet.js';
 import GridElement from '../grid/gridElement.js';
 
-var Weapon = function() {
-    var weapon = document.createElement('div');
-    weapon.className = 'weapon grid-element';
-    GridElement.call(this, weapon);
+class Weapon extends GridElement {
+    constructor() {
+        super();
+        var weapon = document.createElement('div');
+        weapon.className = 'weapon grid-element';
+        GridElement.call(this, weapon);
 
-    this.height = 5;
-    this.width = 8;
-    this.x = 1.2;
+        this.height = 5;
+        this.width = 8;
+        this.x = 1.2;
 
-    this.bullet = null;
-};
-Weapon.prototype = Object.create(GridElement.prototype);
-Weapon.prototype.constructor = Weapon;
+        this.bullet = null;
+    }
+}
 
 GridElement.behavior.fireable = {
     bullet: null,
