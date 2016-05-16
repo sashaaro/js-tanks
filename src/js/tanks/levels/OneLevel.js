@@ -6,6 +6,7 @@ import Weapon from '../Weapon.js';
 import GridElementControl from '../../grid/GridElementControl.js';
 import GridElement from '../../grid/GridElement.js';
 
+//todo firstlevel
 class OneLevel extends Level {
     init () {
         var border = new Well();
