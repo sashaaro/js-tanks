@@ -1,27 +1,28 @@
 import utils from '../../utils.js';
 import Level from './Level.js';
 import Well from '../Well.js';
+import SteelWell from '../SteelWell.js';
 import Tank from '../Tank.js';
 import Weapon from '../Weapon.js';
 import GridElementControl from '../../grid/GridElementControl.js';
 import GridElement from '../../grid/GridElement.js';
 
-class OneLevel extends Level {
+class FirstLevel extends Level {
     init () {
-        var border = new Well();
+        var border = new SteelWell();
         border.x = this.grid.width - 10;
         this.grid.addElement(border);
         border.height = this.grid.height;
 
-        border = new Well();
+        border = new SteelWell();
         this.grid.addElement(border, 0, 0);
         border.height = this.grid.width;
 
-        border = new Well();
+        border = new SteelWell();
         this.grid.addElement(border, 0, 0);
         border.width = this.grid.width;
 
-        border = new Well();
+        border = new SteelWell();
         border.y = this.grid.height-10;
         this.grid.addElement(border);
         border.width = this.grid.width;
@@ -55,12 +56,10 @@ class OneLevel extends Level {
         border.x = 130;
         border.y = 120;
         this.grid.addElement(border);
-        border.document.className = 'steel grid-element'; //todo move to out
         border = new Well();
         border.x = 120;
         border.y = 120;
         this.grid.addElement(border);
-        border.document.className = 'steel grid-element'; //todo move to out
 
 
 
@@ -90,17 +89,12 @@ class OneLevel extends Level {
 
     time (game) {
         var that = this;
-        var has = false;
-        game.grid.elements.forEach(function(element){
-            if(that.enemyTank == element) {
-                has = true;
-            };
-        })
-        if(!has) {
+        var enemyTankExists = game.grid.elements.includes(that.enemyTank);
+        if(!enemyTankExists) {
             game.over();
             alert('win'); //next level
         }
     }
 }
 
-export default OneLevel;
+export default FirstLevel;

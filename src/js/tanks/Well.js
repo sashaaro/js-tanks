@@ -12,6 +12,7 @@ class Well extends GridElement {
     }
 }
 
+//TODO remove
 utils.extend(Well, GridElement.behavior.hitable);
 
 export default Well;

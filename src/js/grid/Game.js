@@ -33,7 +33,7 @@ function ReRenderTimeHandler() {
     this.time = function(game) {
         for(var prop in game.grid.elements) {
             var element = game.grid.elements[prop];
-            if((utils.hasBehaviour(element, GridElement.behavior.movable))) {
+            if((utils.hasBehaviour(element, GridElement.behavior.movable))) { //TODO move out
                 element.move();
             }
             if(element.elements) {

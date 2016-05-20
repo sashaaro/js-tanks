@@ -1,12 +1,12 @@
-import Grid from 'grid/grid.js';
-import OneLevel from 'tanks/levels/oneLevel.js';
-import HtmlRender from 'grid/htmlRender.js';
+import Grid from './grid/grid.js';
+import FirstLevel from './tanks/levels/FirstLevel.js';
+import HtmlRender from './grid/HtmlRender.js';
 import Game from './grid/game.js';
 
 var grid = new Grid(150, 150);
 grid.document = document.getElementById('grid');
 
-var oneLevel = new OneLevel(grid);
+var oneLevel = new FirstLevel(grid);
 oneLevel.init();
 
 var gridDocument = document.getElementById('grid');

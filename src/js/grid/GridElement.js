@@ -1,5 +1,8 @@
 import utils from '../utils.js';
 
+/**
+ * HTML Grid Element
+ */
 class GridElement {
     constructor(document) {
         this.document = document;

@@ -12,7 +12,9 @@ class Bullet extends GridElement {
     }
     hitTrigger (element) {
         this.grid.removeElements.push(this);
-        this.grid.removeElements.push(element);
+        if (!element.strong) {
+            this.grid.removeElements.push(element);
+        }
     }
 }
 

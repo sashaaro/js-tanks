@@ -40,6 +40,8 @@ class HtmlRender {
         gridElement.document.style.width = gridElement.width * this.pxStep;
         gridElement.document.style.height = gridElement.height * this.pxStep;
 
+
+        //TODO refactoring
         if(utils.hasBehaviour(gridElement, GridElement.behavior.rotatable)) {
             gridElement.document.style.webkitTransform = 'rotate(' + (gridElement.rotatePercent / 100) + 'turn)';
         }
