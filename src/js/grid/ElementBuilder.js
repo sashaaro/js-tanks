@@ -14,25 +14,20 @@ function buildElement(grid, elementClass, x, y, height, width, heightDivide, wid
     console.log(widthDivide);
     console.log(width);*/
 
-    while(countH <= itemHeight) {
+    while(countH < heightDivide) {
         var countW = 0;
-        while(countW <= itemWidth) {
+        while(countW < widthDivide) {
             var border = new elementClass;
-            border.x = x;
-            border.y = y;
+            border.x = x + countW * itemWidth;
+            border.y = y + countH * itemHeight;
             border.height = itemHeight;
-            border.itemWidth = itemWidth;
+            border.width = itemWidth;
 
             grid.addElement(border);
 
-
-            console.log(1);
-            return;
+            countW++;
         }
         countH++;
-        countW++;
-
-        return;
     }
 }
 

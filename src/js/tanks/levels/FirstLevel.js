@@ -6,28 +6,24 @@ import Tank from '../Tank.js';
 import Weapon from '../Weapon.js';
 import GridElementControl from '../../grid/GridElementControl.js';
 import GridElement from '../../grid/GridElement.js';
+import buildElement from '../../grid/ElementBuilder.js';
 
 class FirstLevel extends Level {
     init () {
-        var border = new SteelWell();
-        border.x = this.grid.width - 10;
-        this.grid.addElement(border);
-        border.height = this.grid.height;
+        var x = this.grid.width - 10;
+        var y = 0;
+        var height = this.grid.height;
+        var width = 10;
+        buildElement(this.grid, SteelWell, x, y, height, width, 14, 1);
 
-        border = new SteelWell();
-        this.grid.addElement(border, 0, 0);
-        border.height = this.grid.width;
+        buildElement(this.grid, SteelWell, 0, 0, height, width, 14, 1);
 
-        border = new SteelWell();
-        this.grid.addElement(border, 0, 0);
-        border.width = this.grid.width;
+        buildElement(this.grid, SteelWell, 0, 0, 10, this.grid.width, 1, 14);
+        buildElement(this.grid, SteelWell, 0, this.grid.height-10, 10, this.grid.width, 1, 14);
 
-        border = new SteelWell();
-        border.y = this.grid.height-10;
-        this.grid.addElement(border);
-        border.width = this.grid.width;
+        buildElement(this.grid, Well, 40, 10, this.grid.height - 20, 10, 10, 1);
 
-        border = new Well();
+        var border = new Well();
         border.x = 20;
         border.y = 130;
         this.grid.addElement(border);
@@ -42,14 +38,14 @@ class FirstLevel extends Level {
         border.y = 110;
         this.grid.addElement(border);
 
-        border = new Well();
+        /*border = new Well();
         border.x = 30;
         border.y = 110;
         this.grid.addElement(border);
         border = new Well();
         border.x = 40;
         border.y = 110;
-        this.grid.addElement(border);
+        this.grid.addElement(border);*/
 
 
         border = new Well();
@@ -75,16 +71,35 @@ class FirstLevel extends Level {
         this.grid.addElement(myTank);
         //myTank.moveSpeed = 3;
 
+        var gridControl = new GridElementControl();
+
+        gridControl.take(myTank);
+
         var enemyTank = new Tank();
         enemyTank.x = 100;
         enemyTank.y = 100;
         this.grid.addElement(enemyTank);
-
-        var gridControl = new GridElementControl();
-
-        gridControl.take(myTank);
         gridControl.computer(enemyTank);
+
         this.enemyTank = enemyTank;
+
+        var enemyTank = new Tank();
+        enemyTank.x = 110;
+        enemyTank.y = 100;
+        this.grid.addElement(enemyTank);
+        gridControl.computer(enemyTank);
+
+        var enemyTank = new Tank();
+        enemyTank.x = 120;
+        enemyTank.y = 100;
+        this.grid.addElement(enemyTank);
+        gridControl.computer(enemyTank);
+
+        var enemyTank = new Tank();
+        enemyTank.x = 130;
+        enemyTank.y = 100;
+        this.grid.addElement(enemyTank);
+        gridControl.computer(enemyTank);
     }
 
     time (game) {
