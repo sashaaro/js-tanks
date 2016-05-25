@@ -1,4 +1,4 @@
-// TODO maybe class
+// TODO maybe class, refactoring
 function buildElement(grid, elementClass, x, y, height, width, heightDivide, widthDivide) {
     x = x || 0;
     y = y || 0;
@@ -31,4 +31,14 @@ function buildElement(grid, elementClass, x, y, height, width, heightDivide, wid
     }
 }
 
-export default buildElement;
+// TODO less arguments
+function buildToDirection(grid, elementClass, x, y, heightElementsTotal, widthElementsTotal, blockHeight, blockWidth) {
+    blockHeight = blockHeight || 10;
+    blockWidth = blockWidth || 10;
+    let height, width;
+    height = heightElementsTotal * blockHeight;
+    width = widthElementsTotal * blockWidth;
+    buildElement(grid, elementClass, x, y, height, width, heightElementsTotal, widthElementsTotal)
+}
+
+export {buildElement, buildToDirection};

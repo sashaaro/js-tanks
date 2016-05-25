@@ -43,3 +43,9 @@
     background-size: auto auto;
     transform: rotate(0.75turn);
 }
+
+.flag {
+    background-image: url(../image/flag.png);
+    background-repeat: repeat;
+    background-size: 100% auto;
+}
