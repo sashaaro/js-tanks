@@ -1,6 +1,9 @@
-class Level {
-    constructor(grid) {
-        this.grid = grid;
+import TimeHandler from '../../grid/TimeHandler.js';
+
+class Level extends TimeHandler {
+    constructor(game) {
+        super(game);
+        this.grid = this.game.grid;
     }
     init () {
         throw new Error('Level have not implementation');

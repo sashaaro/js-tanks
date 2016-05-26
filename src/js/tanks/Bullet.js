@@ -7,8 +7,8 @@ class Bullet extends GridElement {
         bullet.className = 'bullet grid-element';
         super(bullet);
 
-        this.height = 5;
-        this.width = 8;
+        this.height = 4;
+        this.width = 4;
     }
     hitTrigger (element) {
         this.grid.removeElements.push(this);

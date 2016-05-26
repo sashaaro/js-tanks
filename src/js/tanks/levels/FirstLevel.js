@@ -14,61 +14,18 @@ class FirstLevel extends Level {
         var x = this.grid.width - 10;
         var y = 0;
         var height = this.grid.height;
-        var width = 10;
 
-
+        //border
         buildToDirection(this.grid, SteelWell, x, y, 15, 1, 10, 10);
-        //buildElement(this.grid, SteelWell, x, y, height, width, 14, 1);
-
-        //buildElement(this.grid, SteelWell, 0, 0, height, width, 14, 1);
         buildToDirection(this.grid, SteelWell, 0, 0, 15, 1, 10, 10);
-
         buildToDirection(this.grid, SteelWell, 10, 0, 1, 13, 10, 10);
         buildToDirection(this.grid, SteelWell, 10, height - 10, 1, 13, 10, 10);
-        //buildToDirection(this.grid, SteelWell, 0, 0, 15, 1, 10, 10);
 
-        //buildElement(this.grid, SteelWell, 0, 0, 10, this.grid.width, 1, 14);
-        //buildElement(this.grid, SteelWell, 0, this.grid.height-10, 10, this.grid.width, 1, 14);
-
-        buildToDirection(this.grid, Well, 40, 10, 13, 1, 10, 10);
-        //buildElement(this.grid, Well, 40, 10, this.grid.height - 20, 10, 10, 1);
+        buildToDirection(this.grid, Well, 10, 110, 1, 13, 10, 10);
+        buildToDirection(this.grid, Well, 20, 40, 2, 12, 10, 10);
 
 
-        //buildElement(this.grid, Well, 70, 10, 30, 3, 3, 1);
-
-        buildToDirection(this.grid, Well, 20, 20, 3,2, 10, 10);
-
-
-        var border = new Well();
-        border.x = 20;
-        border.y = 130;
-        this.grid.addElement(border);
-
-        border = new Well();
-        border.x = 20;
-        border.y = 120;
-        this.grid.addElement(border);
-
-        border = new Well();
-        border.x = 20;
-        border.y = 110;
-        this.grid.addElement(border);
-
-        /*border = new Well();
-        border.x = 30;
-        border.y = 110;
-        this.grid.addElement(border);
-        border = new Well();
-        border.x = 40;
-        border.y = 110;
-        this.grid.addElement(border);*/
-
-
-        border = new Well();
-        border.x = 130;
-        border.y = 120;
-        this.grid.addElement(border);
-        border = new Well();
+        let border = new Well();
         border.x = 120;
         border.y = 120;
         this.grid.addElement(border);
@@ -86,8 +43,9 @@ class FirstLevel extends Level {
         myTank.addElement(weapon);
 
         myTank.x = 10;
-        myTank.y = 130;
-        myTank.nextMoveDirection = 'up';
+        myTank.y = 10;
+        myTank.nextMoveDirection = 'down';
+        myTank.rotatePercent = 50;
         this.grid.addElement(myTank);
         //myTank.moveSpeed = 3;
 
@@ -101,19 +59,19 @@ class FirstLevel extends Level {
         this.grid.addElement(enemyTank);
         gridControl.computer(enemyTank);
 
-        var enemyTank = new Tank();
+        enemyTank = new Tank();
         enemyTank.x = 110;
         enemyTank.y = 100;
         this.grid.addElement(enemyTank);
         gridControl.computer(enemyTank);
 
-        var enemyTank = new Tank();
+        enemyTank = new Tank();
         enemyTank.x = 120;
         enemyTank.y = 100;
         this.grid.addElement(enemyTank);
         gridControl.computer(enemyTank);
 
-        var enemyTank = new Tank();
+        enemyTank = new Tank();
         enemyTank.x = 130;
         enemyTank.y = 100;
         this.grid.addElement(enemyTank);
@@ -125,11 +83,14 @@ class FirstLevel extends Level {
         this.grid.addElement(this.enemyFlag);
     }
 
-    time (game) {
+    time () {
+
+    }
+    afterTime() {
         var that = this;
-        var enemyFlagExists = game.grid.elements.includes(that.enemyFlag);
+        var enemyFlagExists = this.game.grid.elements.includes(that.enemyFlag);
         if(!enemyFlagExists) {
-            game.over();
+            this.game.over();
             alert('win'); //next level
         }
     }
