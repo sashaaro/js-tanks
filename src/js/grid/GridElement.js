@@ -43,30 +43,27 @@ GridElement.behavior.embedable = {
 GridElement.behavior.hitable = {
     hitTrigger: null,
     isHit: function() {
-        var that = this;
-        var direction = this.nextMoveDirection;
-
         var isHit = false;
-        this.grid.elements.forEach(function (element) {
-            if (isHit || that === element || !utils.hasBehaviour(element, GridElement.behavior.hitable)) {
+        this.grid.elements.forEach((element) => {
+            if (isHit || this === element || !utils.hasBehaviour(element, GridElement.behavior.hitable)) {
                 return;
             }
 
-            if (direction == element.nextMoveDirection) {
+            if (this.nextMoveDirection == element.nextMoveDirection) {
                 return;
             }
 
-            isHit = direction == 'left' && element.x + element.width == that.x && that.grid.isSideHit(element.getVerticalSize(), that.getVerticalSize()) ||
-            direction == 'right' && element.x == that.x + that.width && that.grid.isSideHit(element.getVerticalSize(), that.getVerticalSize()) ||
-            direction == 'up' && element.y + element.height == that.y && that.grid.isSideHit(element.getHorizontalSize(), that.getHorizontalSize()) ||
-            direction == 'down' && element.y == that.y + that.height && that.grid.isSideHit(element.getHorizontalSize(), that.getHorizontalSize());
+            isHit = this.nextMoveDirection == 'left' && element.x + element.width == this.x && this.grid.isSideHit(element.getVerticalSize(), this.getVerticalSize()) ||
+                this.nextMoveDirection == 'right' && element.x == this.x + this.width && this.grid.isSideHit(element.getVerticalSize(), this.getVerticalSize()) ||
+                this.nextMoveDirection == 'up' && element.y + element.height == this.y && this.grid.isSideHit(element.getHorizontalSize(), this.getHorizontalSize()) ||
+                this.nextMoveDirection == 'down' && element.y == this.y + this.height && this.grid.isSideHit(element.getHorizontalSize(), this.getHorizontalSize());
 
             if (isHit) {
                 if(element.hitTrigger) {
-                    element.hitTrigger(that);
+                    element.hitTrigger(this);
                 }
-                if(that.hitTrigger) {
-                    that.hitTrigger(element);
+                if(this.hitTrigger) {
+                    this.hitTrigger(element);
                 }
             }
         });
