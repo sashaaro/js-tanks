@@ -1,6 +1,3 @@
-import utils from '../utils.js';
-import GridElement from './GridElement.js';
-
 /**
  * HTML Grid
  */
@@ -18,9 +15,6 @@ class Grid {
     addElement(gridElement) {
         gridElement.grid = this;
         this.addElements.push(gridElement);
-    }
-    isSideHit(size, otherSize) { //TODO move to utils
-        return utils.isCoverRange(size.begin, size.end, otherSize.begin, otherSize.end);
     }
 }
 

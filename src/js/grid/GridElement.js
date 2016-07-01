@@ -53,10 +53,7 @@ GridElement.behavior.hitable = {
                 return;
             }
 
-            isHit = this.nextMoveDirection == 'left' && element.x + element.width == this.x && this.grid.isSideHit(element.getVerticalSize(), this.getVerticalSize()) ||
-                this.nextMoveDirection == 'right' && element.x == this.x + this.width && this.grid.isSideHit(element.getVerticalSize(), this.getVerticalSize()) ||
-                this.nextMoveDirection == 'up' && element.y + element.height == this.y && this.grid.isSideHit(element.getHorizontalSize(), this.getHorizontalSize()) ||
-                this.nextMoveDirection == 'down' && element.y == this.y + this.height && this.grid.isSideHit(element.getHorizontalSize(), this.getHorizontalSize());
+            isHit = utils.isSideHit(element.getHorizontalSize(), this.getHorizontalSize()) && utils.isSideHit(element.getVerticalSize(), this.getVerticalSize());
 
             if (isHit) {
                 if(element.hitTrigger) {
@@ -76,28 +73,45 @@ GridElement.behavior.movable = {
     nextMoveDirection: 'right',
     moveSpeed: 1,
     moveStatus: true,
+    moveCoordinates: function() {
+        if (this.nextMoveDirection == 'left') {
+            this.x = this.x - this.moveSpeed;
+        } else if (this.nextMoveDirection == 'right') {
+            this.x = this.x + this.moveSpeed;
+        } else if (this.nextMoveDirection == 'up') {
+            this.y = this.y - this.moveSpeed;
+        } else if (this.nextMoveDirection == 'down') {
+            this.y = this.y + this.moveSpeed;
+        } else {
+            new Error('Error');
+            return;
+        }
+    },
+    moveBackCoordinates: function() {
+        if (this.nextMoveDirection == 'left') {
+            this.x = this.x + this.moveSpeed;
+        } else if (this.nextMoveDirection == 'right') {
+            this.x = this.x - this.moveSpeed;
+        } else if (this.nextMoveDirection == 'up') {
+            this.y = this.y + this.moveSpeed;
+        } else if (this.nextMoveDirection == 'down') {
+            this.y = this.y - this.moveSpeed;
+        } else {
+            new Error('Error');
+            return;
+        }
+    },
     move: function() {
         if (!this.moveStatus) {
             return;
         }
-        var direction = this.nextMoveDirection;
-        var step = this.moveSpeed;
-
+        this.moveCoordinates();
+        this.checkHit();
+    },
+    checkHit: function() {
         if (utils.hasBehaviour(this, GridElement.behavior.hitable) && this.isHit()) {
+            this.moveBackCoordinates();
             this.moveStatus = false;
-        } else {
-            if (direction == 'left') {
-                this.x = this.x - step;
-            } else if (direction == 'right') {
-                this.x = this.x + step;
-            } else if (direction == 'up') {
-                this.y = this.y - step;
-            } else if (direction == 'down') {
-                this.y = this.y + step;
-            } else {
-                new Error('Error');
-                return;
-            }
         }
     }
 }

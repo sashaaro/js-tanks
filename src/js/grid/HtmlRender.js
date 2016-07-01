@@ -1,6 +1,3 @@
-import utils from '../utils.js';
-import GridElement from './GridElement.js';
-
 class HtmlRender {
     constructor(grid, document, pxStep) {
         this.grid = grid;

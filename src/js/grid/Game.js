@@ -1,5 +1,3 @@
-import GridElement from '../grid/GridElement.js';
-import HtmlRender from './HtmlRender.js';
 import ReRenderTimeHandler from './ReRenderTimeHandler.js';
 
 class Game {

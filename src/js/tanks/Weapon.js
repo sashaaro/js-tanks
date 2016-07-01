@@ -22,6 +22,7 @@ GridElement.behavior.fireable = {
         this.bullet = new Bullet();
         this.bullet.nextMoveDirection = this.grid.nextMoveDirection;
         this.bullet.moveStatus = true;
+        this.bullet.moveSpeed = this.grid.moveSpeed;
         utils.extend(this.bullet, GridElement.behavior.rotatable);
         this.bullet.rotatePercent = this.grid.rotatePercent - 25;//todo remove
 

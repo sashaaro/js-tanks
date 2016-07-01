@@ -47,7 +47,7 @@ class FirstLevel extends Level {
         myTank.nextMoveDirection = 'down';
         myTank.rotatePercent = 50;
         this.grid.addElement(myTank);
-        //myTank.moveSpeed = 3;
+        myTank.moveSpeed = 2;
 
         var gridControl = new GridElementControl();
 

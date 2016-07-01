@@ -15,6 +15,10 @@ class ReRenderTimeHandler extends TimeHandler {
             if((utils.hasBehaviour(element, GridElement.behavior.movable))) {
                 element.move();
             }
+        }
+
+        for(var prop in elements) {
+            var element = elements[prop];
             if(element.elements) {
                 var render = new HtmlRender(element, element.document, this.game.render.pxStep);
                 var g = new Game(element, render);
