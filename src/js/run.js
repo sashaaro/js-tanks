@@ -1,4 +1,4 @@
-import Grid from './grid/grid.js';
+import Grid from './grid/Grid.js';
 import FirstLevel from './tanks/levels/FirstLevel.js';
 import HtmlRender from './grid/HtmlRender.js';
 import Game from './grid/Game.js';
